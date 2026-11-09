@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Wifi, WifiOff, HardDrive, Calendar } from 'lucide-react';
-import { formatRupiah } from '../utils/formatters';
+import { formatRupiah, DEFAULT_LOGO_URL } from '../utils/formatters';
 
 export default function TopHeader({ 
   todayRevenue = 0
@@ -33,7 +33,7 @@ export default function TopHeader({
         <div className="flex items-center gap-2.5 min-w-0">
           <div className="relative w-9 h-9 rounded-full overflow-hidden border border-amber-500/40 bg-zinc-900 flex-shrink-0 shadow-sm">
             <img 
-              src="/assets/logoduasisi.jpg" 
+              src={DEFAULT_LOGO_URL} 
               alt="Dua Sisi" 
               className="w-full h-full object-cover"
               onError={(e) => {

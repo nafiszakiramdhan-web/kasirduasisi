@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { Search, Plus, Sparkles, X, ChevronRight, ShoppingBag, Coffee } from 'lucide-react';
-import { formatRupiah } from '../utils/formatters';
+import { formatRupiah, DEFAULT_LOGO_URL } from '../utils/formatters';
 
 const CATEGORIES = [
   'Semua',
@@ -158,7 +158,7 @@ export default function CatalogTab({
                 {/* Image Section */}
                 <div className="relative aspect-square w-full bg-zinc-900 overflow-hidden">
                   <img
-                    src={menu.foto_url || '/assets/logoduasisi.jpg'}
+                    src={menu.foto_url || DEFAULT_LOGO_URL}
                     alt={menu.nama_menu}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"

@@ -13,7 +13,7 @@ import {
   Upload,
   RefreshCw
 } from 'lucide-react';
-import { formatRupiah } from '../utils/formatters';
+import { formatRupiah, DEFAULT_LOGO_URL } from '../utils/formatters';
 import { compressImageFile } from '../utils/imageCompressor';
 
 const DEFAULT_CATEGORIES = [
@@ -132,7 +132,7 @@ export default function MenuAdminTab({
       id_kategori: formData.id_kategori,
       deskripsi: formData.deskripsi.trim(),
       harga: Number(formData.harga) || 0,
-      foto_url: formData.foto_url.trim() || '/assets/logoduasisi.jpg',
+      foto_url: formData.foto_url.trim() || DEFAULT_LOGO_URL,
       is_best_seller: formData.is_best_seller ? 1 : 0,
       is_active: formData.is_active ? 1 : 0
     };
@@ -232,11 +232,11 @@ export default function MenuAdminTab({
                   {/* Photo thumbnail */}
                   <div className="relative w-14 h-14 rounded-xl bg-zinc-900 overflow-hidden flex-shrink-0 border border-zinc-800">
                     <img
-                      src={menu.foto_url || '/assets/logoduasisi.jpg'}
+                      src={menu.foto_url || DEFAULT_LOGO_URL}
                       alt={menu.nama_menu}
                       className="w-full h-full object-cover"
                       onError={(e) => {
-                        e.target.src = '/assets/logoduasisi.jpg';
+                        e.target.src = DEFAULT_LOGO_URL;
                       }}
                     />
                     {menu.is_best_seller === 1 && (

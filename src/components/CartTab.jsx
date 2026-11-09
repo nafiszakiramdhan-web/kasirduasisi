@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Trash2, Plus, Minus, ShoppingBag, AlertCircle, Edit3, User } from 'lucide-react';
-import { formatRupiah } from '../utils/formatters';
+import { formatRupiah, DEFAULT_LOGO_URL } from '../utils/formatters';
 
 export default function CartTab({
   cartItems = [],
@@ -147,7 +147,7 @@ export default function CartTab({
                     {/* Item Thumbnail */}
                     <div className="w-14 h-14 rounded-xl bg-zinc-900 overflow-hidden flex-shrink-0 border border-zinc-800">
                       <img
-                        src={item.foto_url || '/assets/logoduasisi.jpg'}
+                        src={item.foto_url || DEFAULT_LOGO_URL}
                         alt={item.nama_menu}
                         className="w-full h-full object-cover"
                         onError={(e) => {

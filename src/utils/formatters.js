@@ -66,3 +66,5 @@ export function generateTrxNumber() {
   const rnd = Math.floor(1000 + Math.random() * 9000);
   return `DS-${yr}${mo}${dy}-${rnd}`;
 }
+
+export const DEFAULT_LOGO_URL = `${import.meta.env.BASE_URL}assets/logoduasisi.jpg`;
